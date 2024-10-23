@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1722440867112" name="http://endlessforms.info/gdo/gdoa.owl" uri="gdoa.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1722440867112" name="https://endlessforms.info/gdo/gdoa_merged.owl" uri="gdoa_merged.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1722440867112" name="https://endlessforms.info/gdo/gdo.owl" uri="gdo.owl"/>
+    </group>
+</catalog>
