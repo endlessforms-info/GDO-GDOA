@@ -4,7 +4,7 @@ Repository for the Graphic Descriptor Ontology (GDO) and the Graphic Descriptor 
 
 ## About
 
-The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects It uses the language of visual communication, illustration, and technical drawing. The GDO is rooted in the Basic Formal Ontology (BFO) and uses several classes from the Information Entity Ontology of the Common Core Ontologies as a mid-level ontology.
+The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects. It uses the language of visual communication, illustration, and technical drawing. The GDO is rooted in the Basic Formal Ontology (BFO) and uses several classes from the Information Entity Ontology of the Common Core Ontologies as a mid-level ontology.
 
 Our driving use case is description of anatomical graphics, both human anatomy and the anatomy of other organisms. To accommodate anatomy-specific classes we developed the Graphic Descriptor Ontology Anatomy extension (GDOA), which extends the GDO to the domain of anatomical graphics.
 
