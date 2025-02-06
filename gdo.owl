@@ -12,12 +12,12 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://endlessforms.info/gdo/gdo.owl">
-        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/releases/gdo-0.9.0.owl"/>
+        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/releases/gdo-1.0.0.owl"/>
         <dc:description>The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects. It uses the language of visual communication, illustration, and technical drawing. The GDO is rooted in the Basic Formal Ontology (BFO) and uses several classes from the Information Entity Ontology of the Common Core Ontologies as a mid-level ontology.</dc:description>
         <dc:title>Graphic Descriptor Ontology (GDO)</dc:title>
         <dcterms:creator>Melissa Clarkson</dcterms:creator>
         <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <owl:versionInfo>0.9.0</owl:versionInfo>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
         <foaf:homepage rdf:resource="https://gdo.endlessforms.info/"/>
     </owl:Ontology>
     
@@ -195,6 +195,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
+        <obo:IAO_0000115>A core relation that holds between a whole and its part.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -470,31 +479,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000017 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000017">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
-        <obo:IAO_0000600 xml:lang="en">To say that b is a realizable entity is to say that b is a specifically dependent continuant that inheres in some independent continuant which is not a spatial region and is of a type instances of which are realized in processes of a correlated type. (axiom label in BFO2 Reference: [058-002])</obo:IAO_0000600>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
-        <rdfs:label xml:lang="en">realizable entity</rdfs:label>
-        <cco:ont00001760>http://purl.obolibrary.org/obo/bfo.owl</cco:ont00001760>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
-        <obo:IAO_0000600 xml:lang="en">a quality is a specifically dependent continuant that, in contrast to roles and dispositions, does not require any further process in order to be realized. (axiom label in BFO2 Reference: [055-001])</obo:IAO_0000600>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
-        <rdfs:label xml:lang="en">quality</rdfs:label>
-        <cco:ont00001760>http://purl.obolibrary.org/obo/bfo.owl</cco:ont00001760>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BFO_0000020 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000020">
@@ -503,30 +487,6 @@
         <obo:IAO_0000115 xml:lang="en">b is a specifically dependent continuant = Def. b is a continuant &amp; there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])</obo:IAO_0000115>
         <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <rdfs:label xml:lang="en">specifically dependent continuant</rdfs:label>
-        <cco:ont00001760>http://purl.obolibrary.org/obo/bfo.owl</cco:ont00001760>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000023 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000023">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
-        <obo:IAO_0000600 xml:lang="en">b is a role means: b is a realizable entity &amp; b exists because there is some single bearer that is in some special physical, social, or institutional set of circumstances in which this bearer does not have to be&amp; b is not such that, if it ceases to exist, then the physical make-up of the bearer is thereby changed. (axiom label in BFO2 Reference: [061-001])</obo:IAO_0000600>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
-        <rdfs:label xml:lang="en">role</rdfs:label>
-        <cco:ont00001760>http://purl.obolibrary.org/obo/bfo.owl</cco:ont00001760>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000030">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:IAO_0000116>BFO 2 Reference: an object is a maximal causally unified material entity</obo:IAO_0000116>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
-        <rdfs:label xml:lang="en">object</rdfs:label>
         <cco:ont00001760>http://purl.obolibrary.org/obo/bfo.owl</cco:ont00001760>
     </owl:Class>
     
@@ -544,23 +504,22 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-        <obo:IAO_0000600 xml:lang="en">A material entity is an independent continuant that has some portion of matter as proper or improper continuant part. (axiom label in BFO2 Reference: [019-002])</obo:IAO_0000600>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
-        <rdfs:label xml:lang="en">material entity</rdfs:label>
-        <cco:ont00001760>http://purl.obolibrary.org/obo/bfo.owl</cco:ont00001760>
-    </owl:Class>
-    
-
-
     <!-- https://endlessforms.info/gdo/GDO_0000001 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000001">
-        <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/ont00000253"/>
-        <obo:IAO_0000115>An information bearing entity consisting of graphical marks arranged in two- or three-dimensional space.</obo:IAO_0000115>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000253"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000006"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000253"/>
+        <obo:IAO_0000115>A representational information content entity consisting of graphical marks.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">graphic</rdfs:label>
     </owl:Class>
     
@@ -569,9 +528,9 @@
     <!-- https://endlessforms.info/gdo/GDO_0000002 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000002">
-        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000001"/>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000271"/>
         <owl:disjointWith rdf:resource="https://endlessforms.info/gdo/GDO_0000003"/>
-        <obo:IAO_0000115>A graphic consisting of graphical marks positioned using a two-dimensional (planar) coordinate system.</obo:IAO_0000115>
+        <obo:IAO_0000115>A graphic quality such that the graphic consists of graphical marks positioned using a two-dimensional (planar) coordinate system.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">2D graphic</rdfs:label>
     </owl:Class>
     
@@ -580,8 +539,8 @@
     <!-- https://endlessforms.info/gdo/GDO_0000003 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000003">
-        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000001"/>
-        <obo:IAO_0000115>A graphic consisting of graphical marks positioned using a three-dimensional (volumetric) coordinate system but projected onto a two-dimensional plane by a computer system for display.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000271"/>
+        <obo:IAO_0000115>A graphic quality such that the graphic consists of graphical marks positioned using a three-dimensional (volumetric) coordinate system but projected onto a two-dimensional plane by a computer system for display.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">3D graphic</rdfs:label>
     </owl:Class>
     
@@ -590,9 +549,9 @@
     <!-- https://endlessforms.info/gdo/GDO_0000004 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000004">
-        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000001"/>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000271"/>
         <owl:disjointWith rdf:resource="https://endlessforms.info/gdo/GDO_0000005"/>
-        <obo:IAO_0000115>A graphic for which the graphical marks are designed as raised surfaces to be perceived using touch.</obo:IAO_0000115>
+        <obo:IAO_0000115>A graphic quality such that the graphical marks are designed as raised surfaces to be perceived using touch.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">tactile graphic</rdfs:label>
     </owl:Class>
     
@@ -601,8 +560,8 @@
     <!-- https://endlessforms.info/gdo/GDO_0000005 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000005">
-        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000001"/>
-        <obo:IAO_0000115>A graphic for which the graphical marks are designed as differences in color or luminosity to be perceived using sight.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000271"/>
+        <obo:IAO_0000115>A graphic quality such that the graphical marks are designed as differences in color or luminosity to be perceived using sight.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">visual graphic</rdfs:label>
     </owl:Class>
     
@@ -611,8 +570,8 @@
     <!-- https://endlessforms.info/gdo/GDO_0000006 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000006">
-        <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/ont00000253"/>
-        <obo:IAO_0000115>An information bearing entity that is a fundamental unit of representation within a graphic. A graphical mark can be perceptually segmented from the other elements of the graphic based on the mark’s color or luminosity (for a visual graphic) or raised surface (for a tactile graphic). A composition of graphical marks constitutes a graphic.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000269"/>
+        <obo:IAO_0000115>The fundamental unit of represntation within a graphic. A graphical mark can be perceptually segmented from the other elements of the graphic based on the mark’s color or luminosity (for a visual graphic) or raised surface (for a tactile graphic). A composition of graphical marks constitutes a graphic.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">graphical mark</rdfs:label>
     </owl:Class>
     
@@ -691,8 +650,8 @@
     <!-- https://endlessforms.info/gdo/GDO_0000014 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000014">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
-        <obo:IAO_0000115>A quality of a pictorial information content entity.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000255"/>
+        <obo:IAO_0000115>A quality of a pictorial spatial composition.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">pictorial quality</rdfs:label>
     </owl:Class>
     
@@ -745,8 +704,8 @@
     <!-- https://endlessforms.info/gdo/GDO_0000032 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000032">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
-        <obo:IAO_0000115>A material object that some representation represents. An object referent may be a particular object in the world or a class of objects.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <obo:IAO_0000115>An object that some representation represents. An object referent may be a particular object in the world or a type of object.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">object referent</rdfs:label>
     </owl:Class>
     
@@ -766,7 +725,7 @@
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000034">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000014"/>
-        <obo:IAO_0000115>A pictorial quality that describes the manner in which a pictorial information content entity depicts a referent.</obo:IAO_0000115>
+        <obo:IAO_0000115>A pictorial quality that describes the manner in which a pictorial spatial composition entity depicts a referent.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">pictorial style</rdfs:label>
     </owl:Class>
     
@@ -805,7 +764,7 @@
     <!-- https://endlessforms.info/gdo/GDO_0000045 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000045">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000255"/>
         <obo:IAO_0000115>A quality that describes a graphical mark.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">graphical mark quality</rdfs:label>
     </owl:Class>
@@ -986,7 +945,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <!-- https://endlessforms.info/gdo/GDO_0000061 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000061">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000254"/>
         <obo:IAO_0000115>A role that is a representational purpose of a point mark.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">point mark role</rdfs:label>
     </owl:Class>
@@ -1016,7 +975,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <!-- https://endlessforms.info/gdo/GDO_0000064 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000064">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000254"/>
         <obo:IAO_0000115>A role that is a representational purpose of a line mark.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">line mark role</rdfs:label>
     </owl:Class>
@@ -1339,7 +1298,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <!-- https://endlessforms.info/gdo/GDO_0000096 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000096">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000254"/>
         <obo:IAO_0000115>A role that is the representational purpose of a region mark.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">region mark role</rdfs:label>
     </owl:Class>
@@ -1421,7 +1380,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000215">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000267"/>
-        <obo:IAO_0000115>An image file in the Scalable Vector Graphics format.</obo:IAO_0000115>
+        <obo:IAO_0000115>A vector image file in the Scalable Vector Graphics format.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">SVG file</rdfs:label>
     </owl:Class>
     
@@ -1442,7 +1401,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000217">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000216"/>
         <obo:IAO_0000115>An element of an SVG file that provides instructions for drawing a path.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">SVG path</rdfs:label>
+        <rdfs:label xml:lang="en">SVG path element</rdfs:label>
     </owl:Class>
     
 
@@ -1452,7 +1411,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000218">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000216"/>
         <obo:IAO_0000115>An element of an SVG file that provides instructions for drawing a rectangle.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">SVG rectangle</rdfs:label>
+        <rdfs:label xml:lang="en">SVG rectangle element</rdfs:label>
     </owl:Class>
     
 
@@ -1462,7 +1421,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000219">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000216"/>
         <obo:IAO_0000115>An element of an SVG file that provides instructions for drawing a circle.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">SVG circle</rdfs:label>
+        <rdfs:label xml:lang="en">SVG circle element</rdfs:label>
     </owl:Class>
     
 
@@ -1472,7 +1431,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000220">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000216"/>
         <obo:IAO_0000115>An element of an SVG file that provides instructions for drawing an ellipse.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">SVG ellipse</rdfs:label>
+        <rdfs:label xml:lang="en">SVG ellipse element</rdfs:label>
     </owl:Class>
     
 
@@ -1482,7 +1441,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000221">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000216"/>
         <obo:IAO_0000115>An element of an SVG file that provides instructions for drawing a line.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">SVG line</rdfs:label>
+        <rdfs:label xml:lang="en">SVG line element</rdfs:label>
     </owl:Class>
     
 
@@ -1492,7 +1451,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000222">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000216"/>
         <obo:IAO_0000115>An element of an SVG file that provides instructions for drawing a polyline.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">SVG polyline</rdfs:label>
+        <rdfs:label xml:lang="en">SVG polyline element</rdfs:label>
     </owl:Class>
     
 
@@ -1502,7 +1461,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000223">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000216"/>
         <obo:IAO_0000115>An element of an SVG file that provides instructions for drawing a polygon.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">SVG polygon</rdfs:label>
+        <rdfs:label xml:lang="en">SVG polygon element</rdfs:label>
     </owl:Class>
     
 
@@ -1511,7 +1470,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000224">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000266"/>
-        <obo:IAO_0000115>An image file in the Joint Photographic Experts Group format. This is a type of raster file.</obo:IAO_0000115>
+        <obo:IAO_0000115>A type of raster file in the Joint Photographic Experts Group format.</obo:IAO_0000115>
         <obo:IAO_0000118>JPEG file</obo:IAO_0000118>
         <rdfs:label xml:lang="en">JPG file</rdfs:label>
     </owl:Class>
@@ -1522,7 +1481,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000225">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000266"/>
-        <obo:IAO_0000115>An image file in the Portable Network Graphic format. This is a type of raster file.</obo:IAO_0000115>
+        <obo:IAO_0000115>A type of raster file in the Portable Network Graphic format.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">PNG file</rdfs:label>
     </owl:Class>
     
@@ -1532,7 +1491,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000226">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000266"/>
-        <obo:IAO_0000115>An image file in the Graphics Interchange Format. This is a type of raster file.</obo:IAO_0000115>
+        <obo:IAO_0000115>A type of raster file in the Graphics Interchange Format.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">GIF file</rdfs:label>
     </owl:Class>
     
@@ -1572,8 +1531,26 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000253">
         <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/ont00001069"/>
-        <obo:IAO_0000115>A representational information content entity that inheres in an information bearing entity that is an arrangement of elements in two- or three-dimensional space.</obo:IAO_0000115>
+        <obo:IAO_0000115>A representational information content entity that inheres in an information bearing entity and is perceived as arrangement of elements in two- or three-dimensional space.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">spatial composition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000254 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000254">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000264"/>
+        <rdfs:label xml:lang="en">role of generically dependent continuant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000255 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000255">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:label xml:lang="en">quality of generically dependent continuant</rdfs:label>
     </owl:Class>
     
 
@@ -1605,7 +1582,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000258">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <obo:IAO_0000115>A pictorial illustration that represents characterists that define members of some group of a classification scheme, serve as a reference for a rating scheme, or depict a generalized or idealized form that defines a class of entities.</obo:IAO_0000115>
+        <obo:IAO_0000115>A pictorial illustration that depicts a generalized or idealized form that defines a type of entity or carries information relevant to one or more classification schemes or rating schemes.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">pictorial standard</rdfs:label>
     </owl:Class>
     
@@ -1615,7 +1592,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000259">
         <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/ont00001069"/>
-        <obo:IAO_0000115>A pictorial information content entity that is a set of pictorial standards that carry information relevant to one or more classification schemes or rating schemes or that depict generalized or idealized forms that define classes of entities.</obo:IAO_0000115>
+        <obo:IAO_0000115>A representational information content entity that is a set of pictorial standards.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">library of pictorial standards</rdfs:label>
     </owl:Class>
     
@@ -1625,7 +1602,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000260">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
-        <obo:IAO_0000115>A process that some representation represents. A process referent may be a particular process in the world or a class of processes.</obo:IAO_0000115>
+        <obo:IAO_0000115>A process that some representation represents. A process referent may be a particular process in the world or a type of process.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">process referent</rdfs:label>
     </owl:Class>
     
@@ -1646,7 +1623,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000262">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000258"/>
-        <obo:IAO_0000115>A pictorial standard for which the information bearing entity is a graphic.</obo:IAO_0000115>
+        <obo:IAO_0000115>A pictorial standard for which the information content entity is a graphic.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">graphical standard</rdfs:label>
     </owl:Class>
     
@@ -1656,8 +1633,17 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000263">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000259"/>
-        <obo:IAO_0000115>A library of pictorial standards for which the information bearing entities are graphics.</obo:IAO_0000115>
+        <obo:IAO_0000115>A library of pictorial standards for which the information content entities are graphics.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">library of graphical standards</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000264 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000264">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+        <rdfs:label xml:lang="en">generically dependent realizable entity</rdfs:label>
     </owl:Class>
     
 
@@ -1666,7 +1652,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000266">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000214"/>
-        <obo:IAO_0000115>An image file for which pixels are the elemental unit of the information bearing entity.</obo:IAO_0000115>
+        <obo:IAO_0000115>An image file for the elemental units of representation are pixels.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">raster image file</rdfs:label>
     </owl:Class>
     
@@ -1676,7 +1662,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000267">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000214"/>
-        <obo:IAO_0000115>An image file for which graphical marks are the elemental units of the information bearing entity.</obo:IAO_0000115>
+        <obo:IAO_0000115>An image file for which the elemental units representation are graphical marks.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">vector image file</rdfs:label>
     </owl:Class>
     
@@ -1692,13 +1678,22 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     
 
 
-    <!-- https://www.commoncoreontologies.org/ont00000253 -->
+    <!-- https://endlessforms.info/gdo/GDO_0000269 -->
 
-    <owl:Class rdf:about="https://www.commoncoreontologies.org/ont00000253">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
-        <obo:IAO_0000115>An object upon which an information content entity generically depends.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">information bearing entity</rdfs:label>
-        <cco:ont00001760>https://www.commoncoreontologies.org/InformationEntityOntology</cco:ont00001760>
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000269">
+        <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/ont00000958"/>
+        <obo:IAO_0000115>A component of a representation information content entity that is not intended to serve as a representation in isolation.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">unit of representational information content entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000271 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000271">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000255"/>
+        <obo:IAO_0000115>A quality that describes a graphic.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">graphic quality</rdfs:label>
     </owl:Class>
     
 
@@ -1881,7 +1876,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://endlessforms.info/gdo/GDO_0000036">
         <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000034"/>
-        <obo:IAO_0000115>A pictorial style in which the graphical marks have an indirect resemblance to the physical form of the referent, such that the marks correspond only partially to the contours and other spatial characteristics of the referent. Graphics that have a diagrammatic style communicate some information about the physical form of the referent or its parts, but this information is simplified and abstracted.</obo:IAO_0000115>
+        <obo:IAO_0000115>A pictorial style in which the graphical marks have an indirect resemblance to the physical form of the referent, such that the marks correspond only partially to the contours and other spatial characteristics of the referent. Pictorial spatial compositions that have a diagrammatic style communicate some information about the physical form of the referent or its parts, but this information is simplified and abstracted.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">diagrammatic style</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1891,7 +1886,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://endlessforms.info/gdo/GDO_0000039">
         <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000038"/>
-        <obo:IAO_0000115>A type of parallel projection for which the lines of sight are not perpendicular to the plane of projection (the imaginary flat plane onto which a representation of the referent is projected).</obo:IAO_0000115>
+        <obo:IAO_0000115>A type of parallel projection for which the lines of sight are not perpendicular to the plane of projection (the imaginary flat plane onto which a representation of the referent is projected), and the 90-degree angle of a corner on the side closest to the viewer is represented by one horizontal line and one drawn at an angle from the horizontal (typically 30 or 45 degres above horizontal).</obo:IAO_0000115>
         <rdfs:label xml:lang="en">oblique projection</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1933,6 +1928,16 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
         <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000041"/>
         <obo:IAO_0000115>A perspective projection for which the principal axes receding into the distance intersects with the plane of projection. Projection lines parallel to this receding axis converge at a point called the vanishing point. The horizontal and vertical axes are parallel to the plane of projection.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">1-point perspective</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000270 -->
+
+    <owl:NamedIndividual rdf:about="https://endlessforms.info/gdo/GDO_0000270">
+        <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000038"/>
+        <obo:IAO_0000115>A type of parallel projection for which the lines of sight are not perpendicular to the plane of projection (the imaginary flat plane onto which a representation of the referent is projected), and the 90-degree angle of a corner closest to the viewer is represented by two lines drawn 30 degrees above horizontal, forming a 120-degre angle.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">isometric projection</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 

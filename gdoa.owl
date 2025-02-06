@@ -5,6 +5,7 @@
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:www="https://www.commoncoreontologies.org/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -13,14 +14,14 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:is_curated_in_ontology="https://www.ontologyrepository.com/CommonCoreOntologies/is_curated_in_ontology/">
     <owl:Ontology rdf:about="https://endlessforms.info/gdo/gdoa.owl">
-        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/releases/gdoa-0.9.0.owl"/>
+        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/releases/gdoa-1.0.0.owl"/>
         <owl:imports rdf:resource="https://endlessforms.info/gdo/gdo.owl"/>
         <dc:description>The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects. The Graphic Descriptor Ontology Anatomy extension (GDOA) extends the GDO to the domain of anatomical graphics by providing classes for anatomical views and anatomically-relevant region mark roles, such as representing a type of body tissue or body fluid.</dc:description>
         <dc:title>Graphic Descriptor Ontology Anatomy extension (GDOA)</dc:title>
         <dcterms:creator>Melissa Clarkson</dcterms:creator>
         <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <owl:versionInfo>0.9.0</owl:versionInfo>
-        <foaf:homepage rdf:resource="https://gdo.endlessforms.info/"/>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
+        <foaf:homepage rdf:resource="https://gdo.endlessforms.info"/>
     </owl:Ontology>
     
 
@@ -39,8 +40,26 @@
     <!-- https://endlessforms.info/gdo/GDOA_0000145 -->
 
     <owl:AnnotationProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000145">
+        <obo:IAO_0000115>A property that provides information about anatomy relevant to this class or individual.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">related anatomy</rdfs:label>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000237 -->
+
+    <rdfs:Datatype rdf:about="https://endlessforms.info/gdo/GDO_0000237"/>
     
 
 
@@ -59,8 +78,8 @@
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000119">
         <rdfs:subPropertyOf rdf:resource="https://endlessforms.info/gdo/GDO_0000236"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <obo:IAO_0000115>A relation between a pictorial information bearing entity and a anatomical structure or morphological phenotype, such that the representation is a depiction of that structure or phenotype or includes a depiction of that structure or phenotype within the anatomy represented.</obo:IAO_0000115>
+        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <obo:IAO_0000115>A relation between a pictorial spatial composition and an anatomical structure or morphological phenotype, such that the representation is a depiction of that structure or phenotype or includes a depiction of that structure or phenotype within the anatomy represented.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">depicts anatomical entity</rdfs:label>
     </owl:ObjectProperty>
     
@@ -70,8 +89,8 @@
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000120">
         <rdfs:subPropertyOf rdf:resource="https://endlessforms.info/gdo/GDO_0000236"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <obo:IAO_0000115>A relation between a pictorial information bearing entity and a stage of development of an organism, such that the morphology depicted is typical of that developmental stage.</obo:IAO_0000115>
+        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <obo:IAO_0000115>A relation between a pictorial spatial compositin and a stage of development of an organism, such that the morphology depicted is typical of that developmental stage.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">depicts developmental stage</rdfs:label>
     </owl:ObjectProperty>
     
@@ -81,8 +100,8 @@
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000121">
         <rdfs:subPropertyOf rdf:resource="https://endlessforms.info/gdo/GDO_0000236"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <obo:IAO_0000115>A relation between a pictorial information bearing entity and a stage of the human life cycle, such that the morphology depicted is typical of that human life cycle stage.</obo:IAO_0000115>
+        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <obo:IAO_0000115>A relation between a pictorial spatial composition and a stage of the human life cycle, such that the morphology depicted is typical of that human life cycle stage.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">depicts human life cycle stage</rdfs:label>
     </owl:ObjectProperty>
     
@@ -92,9 +111,9 @@
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000123">
         <owl:inverseOf rdf:resource="https://endlessforms.info/gdo/GDOA_0000124"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <obo:IAO_0000115>A relation between two pictorial information bearing entities, such that entity X depicts a later developmental stage than entity Y.</obo:IAO_0000115>
+        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <obo:IAO_0000115>A relation between two pictorial spatial compositions, such that composition X depicts a later developmental stage than composition Y.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">displays developmental stage after</rdfs:label>
     </owl:ObjectProperty>
     
@@ -103,9 +122,9 @@
     <!-- https://endlessforms.info/gdo/GDOA_0000124 -->
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000124">
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <obo:IAO_0000115>A relation between two pictorial information bearing entities, such that entity X depicts an earlier developmental stage than entity Y.</obo:IAO_0000115>
+        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <obo:IAO_0000115>A relation between two pictorial spatial compositions, such that composition X depicts an earlier developmental stage than composition Y.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">displays developmental stage before</rdfs:label>
     </owl:ObjectProperty>
     
@@ -115,9 +134,9 @@
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000125">
         <owl:inverseOf rdf:resource="https://endlessforms.info/gdo/GDOA_0000126"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <obo:IAO_0000115>A relation between two pictorial information bearing entities, such that entity X depicts a less severe phenotype than entity Y, as compared with typical anatomy.</obo:IAO_0000115>
+        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <obo:IAO_0000115>A relation between two pictorial spatial compositions, such that composition X depicts a less severe phenotype than composition Y, as compared with typical anatomy.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">displays less severe phenotype than</rdfs:label>
     </owl:ObjectProperty>
     
@@ -126,9 +145,9 @@
     <!-- https://endlessforms.info/gdo/GDOA_0000126 -->
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000126">
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
-        <obo:IAO_0000115>A relation between two pictorial information bearing entities, such that entity X depicts a more severe phenotype than entity Y, as compared with typical anatomy.</obo:IAO_0000115>
+        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <obo:IAO_0000115>A relation between two pictorial spatial compositions, such that composition X depicts a more severe phenotype than composition Y, as compared with typical anatomy.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">displays more severe phenotype than</rdfs:label>
     </owl:ObjectProperty>
     
@@ -141,7 +160,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
         <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
-        <obo:IAO_0000115>A relation between two pictorial information bearing entities, such that each displays a similar phenotype.</obo:IAO_0000115>
+        <obo:IAO_0000115>A relation between two pictorial spatial compositions, such that each represents a similar phenotype.</obo:IAO_0000115>
         <rdfs:comment>To be used when phenotypes cannot be ordered by severity. For ordered phenotypes use &quot;depicts less severe phenotype than&quot; or &quot;depicts more severe phenotype than&quot;.</rdfs:comment>
         <rdfs:label xml:lang="en">depicts similar phenotype</rdfs:label>
     </owl:ObjectProperty>
@@ -162,7 +181,7 @@
     <!-- https://endlessforms.info/gdo/GDOA_0000127 -->
 
     <owl:DatatypeProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000127">
-        <obo:IAO_0000115>The taxon that the organism(s) depicted by a pictorial information bearing entity belongs to.</obo:IAO_0000115>
+        <obo:IAO_0000115>The taxon that the organism(s) depicted by a pictorial spatial composition belongs to.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">depicts taxon</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -171,7 +190,6 @@
     <!-- https://endlessforms.info/gdo/GDOA_0000128 -->
 
     <owl:DatatypeProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000128">
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <obo:IAO_0000115>Whether the morphology depicted is typical or a canonical form, meaning that the anatomy is commonly found in a healthy population and not classified as an unusual variant, a malformation, or resulting from surgery or injury.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">depicts typical morphology</rdfs:label>
@@ -182,7 +200,6 @@
     <!-- https://endlessforms.info/gdo/GDOA_0000130 -->
 
     <owl:DatatypeProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000130">
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <obo:IAO_0000115>Whether the morphology depicted is an instance of morphology, meaning that the anatomy depicted is of a particular individual (and not a generalization of multiple observations across individuals).</obo:IAO_0000115>
         <rdfs:label xml:lang="en">depicts instantiated morphology</rdfs:label>
@@ -193,7 +210,6 @@
     <!-- https://endlessforms.info/gdo/GDOA_0000131 -->
 
     <owl:DatatypeProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000131">
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -325,7 +341,7 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <obo:IAO_0000115>The directionality of the coordinate system of the referent object that corresponds to the bottom of the canvas of the pictorial information bearing entity.</obo:IAO_0000115>
+        <obo:IAO_0000115>The directionality of the coordinate system of the referent object that corresponds to the bottom of the canvas of the pictorial spatial composition.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">anatomical direction of canvas bottom</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -334,7 +350,6 @@
     <!-- https://endlessforms.info/gdo/GDOA_0000132 -->
 
     <owl:DatatypeProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000132">
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -466,7 +481,7 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <obo:IAO_0000115>The directionality of the coordinate system of the referent object that corresponds to the left side of the canvas of the pictorial information bearing entity.</obo:IAO_0000115>
+        <obo:IAO_0000115>The directionality of the coordinate system of the referent object that corresponds to the left side of the canvas of the pictorial spatial composition.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">anatomical direction of canvas left</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -475,7 +490,6 @@
     <!-- https://endlessforms.info/gdo/GDOA_0000133 -->
 
     <owl:DatatypeProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000133">
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -607,7 +621,7 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <obo:IAO_0000115>The directionality of the coordinate system of the referent object that corresponds to the left side of the canvas of the pictorial information bearing entity.</obo:IAO_0000115>
+        <obo:IAO_0000115>The directionality of the coordinate system of the referent object that corresponds to the left side of the canvas of the pictorial spatial composition.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">anatomical direction of canvas right</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -616,7 +630,6 @@
     <!-- https://endlessforms.info/gdo/GDOA_0000134 -->
 
     <owl:DatatypeProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000134">
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:oneOf>
@@ -748,7 +761,7 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <obo:IAO_0000115>The directionality of the coordinate system of the referent object that corresponds to the top of the canvas of the pictorial information bearing entity.</obo:IAO_0000115>
+        <obo:IAO_0000115>The directionality of the coordinate system of the referent object that corresponds to the top of the canvas of the pictorial spatial composition.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">anatomical direction of canvas top</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1770,7 +1783,7 @@
     <owl:NamedIndividual rdf:about="https://endlessforms.info/gdo/GDOA_0000042">
         <rdf:type rdf:resource="https://endlessforms.info/gdo/GDOA_0000003"/>
         <obo:IAO_0000115>An anatomical surface view that depicts the maxillary teeth and/or roof of the mouth such that the viewer is positioned inferior to the head. This view displays the occlusal (biting) surfaces of the teeth.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">maxillar occlusal view</rdfs:label>
+        <rdfs:label xml:lang="en">maxillary occlusal view</rdfs:label>
     </owl:NamedIndividual>
     
 
