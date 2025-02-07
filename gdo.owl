@@ -12,12 +12,12 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://endlessforms.info/gdo/gdo.owl">
-        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/releases/gdo-1.0.0.owl"/>
+        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/releases/gdo-1.0.1.owl"/>
         <dc:description>The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects. It uses the language of visual communication, illustration, and technical drawing. The GDO is rooted in the Basic Formal Ontology (BFO) and uses several classes from the Information Entity Ontology of the Common Core Ontologies as a mid-level ontology.</dc:description>
         <dc:title>Graphic Descriptor Ontology (GDO)</dc:title>
         <dcterms:creator>Melissa Clarkson</dcterms:creator>
         <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <owl:versionInfo>1.0.0</owl:versionInfo>
+        <owl:versionInfo>1.0.1</owl:versionInfo>
         <foaf:homepage rdf:resource="https://gdo.endlessforms.info/"/>
     </owl:Ontology>
     
@@ -685,7 +685,7 @@
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000018">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000016"/>
-        <obo:IAO_0000115>A view that depicts one of the six faces of a referent drawn using an orthographic projection.</obo:IAO_0000115>
+        <obo:IAO_0000115>A view that depicts one of the six faces of a referent object drawn using an orthogonal orthographic projection.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">orthographic view</rdfs:label>
     </owl:Class>
     
@@ -745,7 +745,7 @@
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000038">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000037"/>
-        <obo:IAO_0000115>A projection type for which the lines of sight (imaginary lines extending between the referent and the viewer of the referent) are parallel to each other, as if the viewer is at an infinite distance. Parallel projections are most commonly used in engineering applications because they preserve the geometry of the object depicted.</obo:IAO_0000115>
+        <obo:IAO_0000115>A projection type for which the lines of sight (projection lines) are parallel to each other, as if the viewer is at an infinite distance. Parallel lines of the referent object are represented as parallel lines on the projection plane (image plane, view plane). Parallel projections are most commonly used in engineering applications.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">parallel projection</rdfs:label>
     </owl:Class>
     
@@ -755,7 +755,7 @@
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000041">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000037"/>
-        <obo:IAO_0000115>A projection type for which the lines of sight (imaginary straight lines extending between the referent and the viewer of the referent) converge at the viewer’s eye (known as the center of projection). Perspective projections are most commonly used in artistic and illustration applications because they mimic the optical effect of receding lines.</obo:IAO_0000115>
+        <obo:IAO_0000115>A projection type for which the lines of sight (projection lines) converge at a point in space known as the center of projection after passing through the projection plane (image plane, view plane). Perspective projections are most commonly used in artistic and illustration applications because they mimic the optical effect of receding lines.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">perspective projection</rdfs:label>
     </owl:Class>
     
@@ -1006,8 +1006,8 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000067">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000065"/>
-        <obo:IAO_0000115>A construction line that helps to establish the three-dimensional location of an edge, corner, or other feature of the referent for a given type of projection.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">projection line</rdfs:label>
+        <obo:IAO_0000115>A construction line that helps to establish the three-dimensional location of an edge, corner, or other feature of the object referent in the projection plane.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">extension line</rdfs:label>
     </owl:Class>
     
 
@@ -1698,6 +1698,106 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     
 
 
+    <!-- https://endlessforms.info/gdo/GDO_0000272 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000272">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000038"/>
+        <obo:IAO_0000115>A parallel projection for which the lines of sight (projection lines) are orthogonal to the projection plane (image plane, view plane).</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">orthographic projection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000273 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000273">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000272"/>
+        <obo:IAO_0000115>An orthographic projection in which one principal axis of the referent object is orthogonal to the projection plane (image plane, view plane) and the other two are parallel to the projection plane. The resulting view reveals only one of the six faces of the referent object. The two axes parallel to the projection plane are typically projected in vertical and horizontal orientations.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">orthogonal orthographic projection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000274 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000274">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000272"/>
+        <obo:IAO_0000115>An orthographic projection in which none of the principal axes of the referent object are orthogonal or parallel to the projection plane (image plane, view plane). The resulting view reveals three faces of the referent object. One axis is typically projected in a vertical orientation in the projection plane.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">axonometric projection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000275 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000275">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000274"/>
+        <obo:IAO_0000115>An axonometric projection for which the projection of the three primary axes into the projection plane (image plane, view plane) creates equal angles between all axis lines.  A corner representing the intersection of the axes is represented by three line marks that intersect to form three 120-degree angles. The same scale is preserved across all axis lines.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">isometric projection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000276 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000276">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000274"/>
+        <obo:IAO_0000115>An axonometric projection for which the projection of the three primary axes into the projection plane (image plane, view plane) creates equal angles between only two of the three axis lines.  A corner representing the intersection of the axes is represented by three line marks that intersect to form two equal angles and an unequal third angle. The same scale is preserved in the projection plane across only two of the axis lines.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">dimetric projection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000277 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000277">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000274"/>
+        <obo:IAO_0000115>An axonometric projection for which the projection of the three primary axes into the projection plane (image plane, view plane) creates unequal angles between all three axis lines.  A corner representing the intersection of the axes is represented by three line marks that intersect to form three unequal angles. Each axis lines has a different scale in the projection plane.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">trimetric projection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000278 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000278">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000038"/>
+        <obo:IAO_0000115>A parallel projection for which the lines of sight (projection lines) intersect the projection plane (image plane, view plane) at an angle that is oblique (not orthogonal) to the plane.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">oblique projection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000279 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000279">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000041"/>
+        <obo:IAO_0000115>A perspective projection for which one of the principal axes intersects with the plane of projection. Lines of the referent object that are parallel to this receding axis are represented as line marks in the projection plane that converge at a point called the vanishing point. The other two principal axes are parallel to the plane of projection.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">1-point perspective projection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000280 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000280">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000041"/>
+        <obo:IAO_0000115>A perspective projection for which two of the principal axes intersect with the plane of projection. Lines of the referent object that are parallel to an intersecting axis are represented as line marks in the projection plane that converge at a point called the vanishing point, creating two vanishing points for this type of projection. The other principal axis is parallel to the plane of projection.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">2-point perspective projection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000281 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000281">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000041"/>
+        <obo:IAO_0000115>A perspective projection for which all three principal axes intersect with the plane of projection. Lines of the referent object that are parallel to an intersecting axis are represented as line marks in the projection plane that converge at a point called the vanishing point, creating three vanishing points for this type of projection.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">3-point perspective projection</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://www.commoncoreontologies.org/ont00000958 -->
 
     <owl:Class rdf:about="https://www.commoncoreontologies.org/ont00000958">
@@ -1878,66 +1978,6 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
         <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000034"/>
         <obo:IAO_0000115>A pictorial style in which the graphical marks have an indirect resemblance to the physical form of the referent, such that the marks correspond only partially to the contours and other spatial characteristics of the referent. Pictorial spatial compositions that have a diagrammatic style communicate some information about the physical form of the referent or its parts, but this information is simplified and abstracted.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">diagrammatic style</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://endlessforms.info/gdo/GDO_0000039 -->
-
-    <owl:NamedIndividual rdf:about="https://endlessforms.info/gdo/GDO_0000039">
-        <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000038"/>
-        <obo:IAO_0000115>A type of parallel projection for which the lines of sight are not perpendicular to the plane of projection (the imaginary flat plane onto which a representation of the referent is projected), and the 90-degree angle of a corner on the side closest to the viewer is represented by one horizontal line and one drawn at an angle from the horizontal (typically 30 or 45 degres above horizontal).</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">oblique projection</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://endlessforms.info/gdo/GDO_0000040 -->
-
-    <owl:NamedIndividual rdf:about="https://endlessforms.info/gdo/GDO_0000040">
-        <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000038"/>
-        <obo:IAO_0000115>A type of parallel projection for which the lines of sight are perpendicular to the plane of projection (the imaginary flat plane onto which a representation of the referent is projected).</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">orthographic projection</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://endlessforms.info/gdo/GDO_0000042 -->
-
-    <owl:NamedIndividual rdf:about="https://endlessforms.info/gdo/GDO_0000042">
-        <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000041"/>
-        <obo:IAO_0000115>A perspective projection for which all three principal axes intersect with the plane of projection. Projection lines parallel to the three axes converge at three vanishing points. No axes are parallel to the plane of projection.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">3-point perspective</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://endlessforms.info/gdo/GDO_0000043 -->
-
-    <owl:NamedIndividual rdf:about="https://endlessforms.info/gdo/GDO_0000043">
-        <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000041"/>
-        <obo:IAO_0000115>A perspective projection for which two of the principal axes intersect with the plane of projection. Projection lines parallel to these two axes converge at two vanishing points. The third axis is parallel to the plane of projection.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">2-point perspective</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://endlessforms.info/gdo/GDO_0000044 -->
-
-    <owl:NamedIndividual rdf:about="https://endlessforms.info/gdo/GDO_0000044">
-        <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000041"/>
-        <obo:IAO_0000115>A perspective projection for which the principal axes receding into the distance intersects with the plane of projection. Projection lines parallel to this receding axis converge at a point called the vanishing point. The horizontal and vertical axes are parallel to the plane of projection.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">1-point perspective</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://endlessforms.info/gdo/GDO_0000270 -->
-
-    <owl:NamedIndividual rdf:about="https://endlessforms.info/gdo/GDO_0000270">
-        <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000038"/>
-        <obo:IAO_0000115>A type of parallel projection for which the lines of sight are not perpendicular to the plane of projection (the imaginary flat plane onto which a representation of the referent is projected), and the 90-degree angle of a corner closest to the viewer is represented by two lines drawn 30 degrees above horizontal, forming a 120-degre angle.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">isometric projection</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
