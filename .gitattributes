@@ -1,0 +1,5 @@
+# Exclude the scripts directory from the release
+scripts/ export-ignore
+
+# Exclude other files or directories as needed
+.github/ export-ignore
