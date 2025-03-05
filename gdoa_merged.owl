@@ -13,7 +13,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://endlessforms.info/gdo/gdoa_merged.owl">
-        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/gdoa_merged-1.0.2.owl"/>
+        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/gdoa_merged-1.0.3.owl"/>
         <dc:description>The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects. It uses the language of visual communication, illustration, and technical drawing. The GDO is rooted in the Basic Formal Ontology (BFO) and uses several classes from the Information Entity Ontology of the Common Core Ontologies as a mid-level ontology.</dc:description>
         <dc:description>The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects. The Graphic Descriptor Ontology Anatomy extension (GDOA) extends the GDO to the domain of anatomical graphics by providing classes for anatomical views and anatomically-relevant region mark roles, such as representing a type of body tissue or body fluid.</dc:description>
         <dc:title>Graphic Descriptor Ontology (GDO)</dc:title>
@@ -21,7 +21,7 @@
         <terms:creator>Landon Todd Detwiler</terms:creator>
         <terms:creator>Melissa Clarkson</terms:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <owl:versionInfo>1.0.2</owl:versionInfo>
+        <owl:versionInfo>1.0.3</owl:versionInfo>
         <foaf:homepage rdf:resource="https://gdo.endlessforms.info"/>
     </owl:Ontology>
     
@@ -197,23 +197,6 @@
         <rdfs:label>is curated in ontology</rdfs:label>
         <www:ont00001760>https://www.commoncoreontologies.org/ExtendedRelationOntology</www:ont00001760>
     </owl:AnnotationProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://endlessforms.info/gdo/GDO_0000237 -->
-
-    <rdfs:Datatype rdf:about="https://endlessforms.info/gdo/GDO_0000237"/>
     
 
 
