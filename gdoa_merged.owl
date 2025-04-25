@@ -13,15 +13,12 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://endlessforms.info/gdo/gdoa_merged.owl">
-        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/gdoa_merged-1.0.3.owl"/>
-        <dc:description>The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects. It uses the language of visual communication, illustration, and technical drawing. The GDO is rooted in the Basic Formal Ontology (BFO) and uses several classes from the Information Entity Ontology of the Common Core Ontologies as a mid-level ontology.</dc:description>
+        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/releases/gdoa_merged-1.0.4.owl"/>
         <dc:description>The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects. The Graphic Descriptor Ontology Anatomy extension (GDOA) extends the GDO to the domain of anatomical graphics by providing classes for anatomical views and anatomically-relevant region mark roles, such as representing a type of body tissue or body fluid.</dc:description>
-        <dc:title>Graphic Descriptor Ontology (GDO)</dc:title>
         <dc:title>Graphic Descriptor Ontology Anatomy extension (GDOA)</dc:title>
-        <terms:creator>Landon Todd Detwiler</terms:creator>
         <terms:creator>Melissa Clarkson</terms:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <owl:versionInfo>1.0.3</owl:versionInfo>
+        <owl:versionInfo>1.0.4</owl:versionInfo>
         <foaf:homepage rdf:resource="https://gdo.endlessforms.info"/>
     </owl:Ontology>
     
@@ -2354,7 +2351,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000065">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000064"/>
-        <obo:IAO_0000115>A line mark role that assists in establishing the three-dimensional nature of the space in which a referent resides.</obo:IAO_0000115>
+        <obo:IAO_0000115>A line mark role that assists in establishing the three-dimensional nature of the space in which a referent resides or otherwise assists in depicting a three-dimensional object in two dimensions.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">construction line</rdfs:label>
     </owl:Class>
     
@@ -2456,7 +2453,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000075">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000069"/>
-        <obo:IAO_0000115>A form line that delimits regions of surfaces visible to the viewer of the referent from regions of surfaces hidden from the viewer. The surface normal is perpendicular to the direction of viewing.</obo:IAO_0000115>
+        <obo:IAO_0000115>A form line that delimits regions of surfaces visible to the viewer of the referent from regions of surfaces hidden from the viewer. An object that is very thin may have its parallel occluding contours represented by a single occluding contour line that indicates the length of the object, rather than a double line.</obo:IAO_0000115>
         <obo:IAO_0000118>silhouette line</obo:IAO_0000118>
         <rdfs:label xml:lang="en">occluding contour line</rdfs:label>
     </owl:Class>
@@ -2507,7 +2504,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000080">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000078"/>
-        <obo:IAO_0000115>A line for annotation of meaning that represents a measurable extent (such as length or height) of a referentt. A dimension line is often drawn using arrowheads and may be bounded with extent lines.</obo:IAO_0000115>
+        <obo:IAO_0000115>A line for annotation of meaning that represents a measurable extent (such as length, height, or arc) of a referent. A dimension line is often drawn using arrowheads and may be bounded with extent lines.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">dimension line</rdfs:label>
     </owl:Class>
     
@@ -2517,7 +2514,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000081">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000078"/>
-        <obo:IAO_0000115>A line for annotation of meaning that establishes one endpoint of a measurable extent and is oriented perpendicular to the line segment representing the length of the extent. (The line segment may or may not be drawn). The distance between a pair of extent lines represents the length of the extent.</obo:IAO_0000115>
+        <obo:IAO_0000115>A line for annotation of meaning that establishes one endpoint of a measurable extent and is usually oriented perpendicular to the line segment representing the length of the extent. (The line segment may or may not be drawn). The distance between a pair of extent lines represents the length of the extent.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">extent line</rdfs:label>
     </owl:Class>
     
@@ -2577,7 +2574,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000087">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000085"/>
-        <obo:IAO_0000115>A line for annotation of form that represents an edge of the referent if the referent was to undergo a change in form, size, or location.</obo:IAO_0000115>
+        <obo:IAO_0000115>A line for annotation of form that represents the referent if the referent was to undergo a change in form, size, or location.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">phantom line</rdfs:label>
     </owl:Class>
     
@@ -2647,7 +2644,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000094">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000064"/>
-        <obo:IAO_0000115>A line mark role that indicates the directionality of bundles, channels, or grooves in a material.</obo:IAO_0000115>
+        <obo:IAO_0000115>A line mark role that indicates one or more channels, ridges, grooves, or line-like differences of color in a material. Distinguished from surrounding material by difference in texture, elevation, or color.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">line of striation</rdfs:label>
     </owl:Class>
     
@@ -2709,7 +2706,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000100">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000078"/>
         <obo:IAO_0000115>A line for annotation of meaning that forms an arrow or part of an arrow that points to a part of a spatial composition or indicates a direction.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">line of pointer arrow</rdfs:label>
+        <rdfs:label xml:lang="en">line of pointer</rdfs:label>
     </owl:Class>
     
 
@@ -3075,6 +3072,36 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000272"/>
         <obo:IAO_0000115>An orthographic projection in which none of the principal axes of the referent object are orthogonal or parallel to the projection plane (image plane, view plane). The resulting view reveals three faces of the referent object. One axis is typically projected in a vertical orientation in the projection plane.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">axonometric projection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000280 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000280">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000078"/>
+        <obo:IAO_0000115>A line for annotation of meaning that separates sections of a composition, typically used to demarcate regions holding different pictorial or textual representations.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">divider line</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000281 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000281">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000061"/>
+        <obo:IAO_0000115>A point mark role for which the mark designates a point deemed to be particularly important for the communication purpose of the graphic.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">point of interest</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000282 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000282">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000078"/>
+        <obo:IAO_0000115>A line for annotation of meaning that encloses a region of particular interest within the graphic.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">line bounding region of interest</rdfs:label>
     </owl:Class>
     
 
