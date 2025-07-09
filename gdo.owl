@@ -12,13 +12,13 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://endlessforms.info/gdo/gdo.owl">
-        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/releases/gdo-1.1.0.owl"/>
+        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/releases/gdo-1.1.1.owl"/>
         <dc:description>The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects. It uses the language of visual communication, illustration, and technical drawing. The GDO is rooted in the Basic Formal Ontology (BFO) and uses several classes from the Information Entity Ontology of the Common Core Ontologies as a mid-level ontology.</dc:description>
         <dc:title>Graphic Descriptor Ontology (GDO)</dc:title>
         <dcterms:creator>Landon Todd Detwiler</dcterms:creator>
         <dcterms:creator>Melissa Clarkson</dcterms:creator>
         <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <owl:versionInfo>1.1.0</owl:versionInfo>
+        <owl:versionInfo>1.1.1</owl:versionInfo>
         <foaf:homepage rdf:resource="https://gdo.endlessforms.info/"/>
     </owl:Ontology>
     
@@ -199,12 +199,22 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <obo:IAO_0000115>A core relation that holds between a part and its whole.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">part of</rdfs:label>
+        <cco:ont00001760>http://purl.obolibrary.org/obo/ro.owl</cco:ont00001760>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
         <obo:IAO_0000115>A core relation that holds between a whole and its part.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has part</rdfs:label>
-        <cco:ont00001760>http://purl.obolibrary.org/obo/bfo.owl</cco:ont00001760>
+        <cco:ont00001760>http://purl.obolibrary.org/obo/ro.owl</cco:ont00001760>
     </owl:ObjectProperty>
     
 
@@ -741,7 +751,7 @@
                 <owl:allValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000045"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>The fundamental unit of represntation within a graphic. A graphical mark can be perceptually segmented from the other elements of the graphic based on the mark’s color or luminosity (for a visual graphic) or raised surface (for a tactile graphic). A composition of graphical marks constitutes a graphic.</obo:IAO_0000115>
+        <obo:IAO_0000115>The fundamental unit of representation within a graphic. A graphical mark can be perceptually segmented from the other elements of the graphic based on the mark’s color or luminosity (for a visual graphic) or raised surface (for a tactile graphic). A composition of graphical marks constitutes a graphic.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">graphical mark</rdfs:label>
     </owl:Class>
     
@@ -798,8 +808,14 @@
     <!-- https://endlessforms.info/gdo/GDO_0000010 -->
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000010">
-        <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/ont00001069"/>
-        <obo:IAO_0000115>An representational information content entity that is a contiguous area within a spatial composition.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000269"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000253"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A part of representational information content entity that is a contiguous area within a spatial composition.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">region of spatial composition</rdfs:label>
     </owl:Class>
     
@@ -829,6 +845,12 @@
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000013">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000010"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://endlessforms.info/gdo/GDO_0000284"/>
+                <owl:someValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000179"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A region of a spatial composition that is particularly important for communication of the information.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">region of interest of spatial composition</rdfs:label>
     </owl:Class>
@@ -842,10 +864,17 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://endlessforms.info/gdo/GDO_0000288"/>
-                <owl:allValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                            <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A quality of a pictorial spatial composition.</obo:IAO_0000115>
+        <obo:IAO_0000115>A quality of a pictorial sensor-generated image or a pictorial graphic.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">pictorial quality</rdfs:label>
     </owl:Class>
     
@@ -873,7 +902,6 @@
                 <owl:allValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000014"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="https://endlessforms.info/gdo/GDO_0000257"/>
         <owl:disjointWith rdf:resource="https://endlessforms.info/gdo/GDO_0000261"/>
         <obo:IAO_0000115>A sensor-generated image that represents the form (shape) and/or visual appearance of some referent entity.</obo:IAO_0000115>
         <rdfs:comment>Examples include photographs, radiographs, and micrographs.</rdfs:comment>
@@ -948,7 +976,7 @@
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000034">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000014"/>
-        <obo:IAO_0000115>A pictorial quality that describes the manner in which a pictorial spatial composition entity depicts a referent.</obo:IAO_0000115>
+        <obo:IAO_0000115>A pictorial quality that describes the manner in which a pictorial graphic depicts a referent.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">pictorial style</rdfs:label>
     </owl:Class>
     
@@ -958,6 +986,12 @@
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000037">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000014"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://endlessforms.info/gdo/GDO_0000288"/>
+                <owl:allValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000268"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A pictorial quality that describes the technique employed for representing a three-dimensional referent as a two-dimensional image.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">projection type</rdfs:label>
     </owl:Class>
@@ -1809,26 +1843,8 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000256">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000253"/>
         <obo:IAO_0000115>A spatial composition created through projection of values onto a two-dimensional plane of a sensor, where the values are measurements of a characteristic of some entity and represented as color and/or luminosity.</obo:IAO_0000115>
-        <rdfs:comment>The fundamental information unit of this type of image is a pixel. The pixels are arranged in a two- or three-dimensional array.</rdfs:comment>
+        <rdfs:comment>If this was created using a digital sensor, the fundamental information unit of this type of image is a pixel, with the pixels arranged in a two- or three-dimensional array. For analog photographs, the unit is the grain of  the film.</rdfs:comment>
         <rdfs:label xml:lang="en">sensor-generated image</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://endlessforms.info/gdo/GDO_0000257 -->
-
-    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000257">
-        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000001"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://endlessforms.info/gdo/GDO_0000284"/>
-                <owl:someValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000290"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="https://endlessforms.info/gdo/GDO_0000261"/>
-        <obo:IAO_0000115>A graphic for which the information content is primarily data values that represent measurements of one or more referents. Data values are encoded as visual variables such as length, size, position, or color within the composition.</obo:IAO_0000115>
-        <rdfs:comment>Examples include the information content of bar graphs and scatterplots.</rdfs:comment>
-        <rdfs:label xml:lang="en">numeric graphic</rdfs:label>
     </owl:Class>
     
 
@@ -1870,7 +1886,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A graphic for which the information content is primarily about relationships among referents.</obo:IAO_0000115>
-        <rdfs:comment>Examples include the information content of network (node-and-edge) diagrams and wiring diagrams.</rdfs:comment>
+        <rdfs:comment>Examples include the information content of network (node-and-edge) diagrams, Venn diagrams, and wiring diagrams.</rdfs:comment>
         <rdfs:label xml:lang="en">relational graphic</rdfs:label>
     </owl:Class>
     
@@ -1896,7 +1912,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000262"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A set of representational information content entities consisting of graphical stnadards.</obo:IAO_0000115>
+        <obo:IAO_0000115>A set of representational information content entities consisting of graphical standards related by some theme.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">library of graphical standards</rdfs:label>
     </owl:Class>
     
@@ -1938,8 +1954,9 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000032"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A graphic for which the information content is primarily about the form (shape) and/or visual appearance of referents.</obo:IAO_0000115>
+        <obo:IAO_0000115>A graphic for which the information content is primarily about the form (shape) and/or visual appearance of one or more referents and for which the spatial properties of the spatial composition to correspond in some way to spatial properties of the referent.</obo:IAO_0000115>
         <obo:IAO_0000118>pictorial illustration</obo:IAO_0000118>
+        <rdfs:comment>Examples include the information content of a drawing of a fish, an architectural plan for a house, a map of a state showing locations of hospitals.</rdfs:comment>
         <rdfs:label xml:lang="en">pictorial graphic</rdfs:label>
     </owl:Class>
     
@@ -1949,7 +1966,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000269">
         <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/ont00000958"/>
-        <obo:IAO_0000115>A component of a representation information content entity that is not intended to serve as a representation in isolation.</obo:IAO_0000115>
+        <obo:IAO_0000115>A component of a representation information content entity.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">unit of representational information content entity</rdfs:label>
     </owl:Class>
     
@@ -2045,7 +2062,8 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000289">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000255"/>
-        <rdfs:label xml:lang="en">information content quality</rdfs:label>
+        <obo:IAO_0000115>An attribute or characteristic that inheres in some information content entity.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">quality of information content entity</rdfs:label>
     </owl:Class>
     
 
@@ -2057,11 +2075,11 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://endlessforms.info/gdo/GDO_0000285"/>
-                <owl:someValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000257"/>
+                <owl:someValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000294"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A role of representing data values that are measurements about one or more referents.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">numerical representation role</rdfs:label>
+        <obo:IAO_0000115>A role of representing data values that are categories, measurements or rankings of one or more referents.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">data representation role</rdfs:label>
     </owl:Class>
     
 
@@ -2102,6 +2120,17 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A role of representing relationships among two or more referents.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">relational representation role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000294 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000294">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000001"/>
+        <obo:IAO_0000115>A graphic for which the information content is primarily data values that represent categories, measurements, or rankings that are attributes of one or more referents. Data values are encoded as visual variables such as length, size, position, or color within the composition.</obo:IAO_0000115>
+        <rdfs:comment>Examples include the information content of a scatterplot of height and weight, a bar graph showing the number of students in each grade, and a bump chart showing rankings in a sports league.</rdfs:comment>
+        <rdfs:label xml:lang="en">data graphic</rdfs:label>
     </owl:Class>
     
 
@@ -2298,7 +2327,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="https://endlessforms.info/gdo/GDO_0000036">
         <rdf:type rdf:resource="https://endlessforms.info/gdo/GDO_0000034"/>
-        <obo:IAO_0000115>A pictorial style in which the graphical marks have an indirect resemblance to the physical form of the referent, such that the marks correspond only partially to the contours and other spatial characteristics of the referent. Pictorial spatial compositions that have a diagrammatic style communicate some information about the physical form of the referent or its parts, but this information is simplified and abstracted.</obo:IAO_0000115>
+        <obo:IAO_0000115>A pictorial style in which the graphical marks have an indirect resemblance to the physical form of the referent, such that the marks correspond only partially to the contours and other spatial characteristics of the referent. Pictorial graphics that have a diagrammatic style communicate some information about the physical form of the referent or its parts, but this information is simplified and abstracted.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">diagrammatic style</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2385,5 +2414,5 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
 
 
 
-<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
