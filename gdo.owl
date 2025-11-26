@@ -1080,7 +1080,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
         <rdfs:comment>A nine-step value scale was devised by Denman Ross in the early 1900s with seven ordered tones between white and black. The seven values are high light, light, low light, middle value, high dark, dark, and low dark.
 
 https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
-        <rdfs:label xml:lang="en">dark value of Denman Ross scale</rdfs:label>
+        <rdfs:label xml:lang="en">dark value of Denman Ross value scale</rdfs:label>
     </owl:Class>
     
 
@@ -2136,6 +2136,16 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
         <obo:IAO_0000115>A graphic for which the information content is primarily data values that represent categories, measurements, or rankings that are attributes of one or more referents. Data values are encoded as visual variables such as length, size, position, or color within the composition.</obo:IAO_0000115>
         <rdfs:comment>Examples include the information content of a scatterplot of height and weight, a bar graph showing the number of students in each grade, and a bump chart showing rankings in a sports league.</rdfs:comment>
         <rdfs:label xml:lang="en">data graphic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://endlessforms.info/gdo/GDO_0000295 -->
+
+    <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000295">
+        <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000269"/>
+        <obo:IAO_0000115>The fundamental unit of representation in a digital sensor-generated image.  A pixel represents a value of a measurement.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">pixel of sensor-generated image</rdfs:label>
     </owl:Class>
     
 
