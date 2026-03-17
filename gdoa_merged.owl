@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://endlessforms.info/gdo/gdoa_merged.owl#"
-     xml:base="https://endlessforms.info/gdo/gdoa_merged.owl"
+<rdf:RDF xmlns="https://endlessforms.info/gdo/gdoa-merged.owl#"
+     xml:base="https://endlessforms.info/gdo/gdoa-merged.owl"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:gdo="https://endlessforms.info/gdo/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
@@ -12,15 +12,17 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
-    <owl:Ontology rdf:about="https://endlessforms.info/gdo/gdoa_merged.owl">
-        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/releases/gdoa_merged-1.1.2.owl"/>
+    <owl:Ontology rdf:about="https://endlessforms.info/gdo/gdoa-merged.owl">
+        <owl:versionIRI rdf:resource="https://endlessforms.info/gdo/releases/gdoa-merged-1.1.3.owl"/>
         <dc:description>The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects. It uses the language of visual communication, illustration, and technical drawing. The GDO is rooted in the Basic Formal Ontology (BFO) and uses several classes from the Information Entity Ontology of the Common Core Ontologies as a mid-level ontology.</dc:description>
+        <dc:description>The Graphic Descriptor Ontology (GDO) is intended for use in describing graphics that represent the form of objects. The Graphic Descriptor Ontology Anatomy extension (GDOA) extends the GDO to the domain of anatomical graphics by providing classes for anatomical views and anatomically-relevant region mark roles, such as representing a type of body tissue or body fluid.</dc:description>
         <dc:title>Graphic Descriptor Ontology (GDO)</dc:title>
         <dc:title>Graphic Descriptor Ontology Anatomy extension (GDOA)</dc:title>
         <terms:creator>Landon Todd Detwiler</terms:creator>
         <terms:creator>Melissa Clarkson</terms:creator>
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <owl:versionInfo>1.1.2</owl:versionInfo>
+        <owl:versionInfo>1.1.3</owl:versionInfo>
+        <foaf:homepage rdf:resource="https://gdo.endlessforms.info"/>
         <foaf:homepage rdf:resource="https://gdo.endlessforms.info/"/>
     </owl:Ontology>
     
@@ -213,7 +215,6 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <obo:IAO_0000115>A core relation that holds between a part and its whole.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">part of</rdfs:label>
         <www:ont00001760>http://purl.obolibrary.org/obo/ro.owl</www:ont00001760>
@@ -224,7 +225,6 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <obo:IAO_0000115>A core relation that holds between a whole and its part.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">has part</rdfs:label>
         <www:ont00001760>http://purl.obolibrary.org/obo/ro.owl</www:ont00001760>
@@ -236,7 +236,14 @@
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000119">
         <rdfs:subPropertyOf rdf:resource="https://endlessforms.info/gdo/GDO_0000236"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <obo:IAO_0000115>A relation between a pictorial spatial composition and an anatomical structure or morphological phenotype, such that the representation is a depiction of that structure or phenotype or includes a depiction of that structure or phenotype within the anatomy represented.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">depicts anatomical entity</rdfs:label>
     </owl:ObjectProperty>
@@ -247,7 +254,14 @@
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000120">
         <rdfs:subPropertyOf rdf:resource="https://endlessforms.info/gdo/GDO_0000236"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <obo:IAO_0000115>A relation between a pictorial spatial compositin and a stage of development of an organism, such that the morphology depicted is typical of that developmental stage.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">depicts developmental stage</rdfs:label>
     </owl:ObjectProperty>
@@ -258,7 +272,14 @@
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000121">
         <rdfs:subPropertyOf rdf:resource="https://endlessforms.info/gdo/GDO_0000236"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <obo:IAO_0000115>A relation between a pictorial spatial composition and a stage of the human life cycle, such that the morphology depicted is typical of that human life cycle stage.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">depicts human life cycle stage</rdfs:label>
     </owl:ObjectProperty>
@@ -270,8 +291,22 @@
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000123">
         <owl:inverseOf rdf:resource="https://endlessforms.info/gdo/GDOA_0000124"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
-        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <obo:IAO_0000115>A relation between two pictorial spatial compositions, such that composition X depicts a later developmental stage than composition Y.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">displays developmental stage after</rdfs:label>
     </owl:ObjectProperty>
@@ -282,8 +317,22 @@
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000124">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
-        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <obo:IAO_0000115>A relation between two pictorial spatial compositions, such that composition X depicts an earlier developmental stage than composition Y.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">displays developmental stage before</rdfs:label>
     </owl:ObjectProperty>
@@ -295,8 +344,22 @@
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000125">
         <owl:inverseOf rdf:resource="https://endlessforms.info/gdo/GDOA_0000126"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
-        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <obo:IAO_0000115>A relation between two pictorial spatial compositions, such that composition X depicts a less severe phenotype than composition Y, as compared with typical anatomy.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">displays less severe phenotype than</rdfs:label>
     </owl:ObjectProperty>
@@ -307,8 +370,22 @@
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDOA_0000126">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
-        <rdfs:range rdf:resource="https://endlessforms.info/gdo/GDO_0000015"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000015"/>
+                    <rdf:Description rdf:about="https://endlessforms.info/gdo/GDO_0000268"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <obo:IAO_0000115>A relation between two pictorial spatial compositions, such that composition X depicts a more severe phenotype than composition Y, as compared with typical anatomy.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">displays more severe phenotype than</rdfs:label>
     </owl:ObjectProperty>
@@ -351,7 +428,6 @@
     <!-- https://endlessforms.info/gdo/GDO_0000239 -->
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDO_0000239">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -377,7 +453,6 @@
     <!-- https://endlessforms.info/gdo/GDO_0000240 -->
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDO_0000240">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -462,7 +537,6 @@
 
     <owl:ObjectProperty rdf:about="https://endlessforms.info/gdo/GDO_0000252">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -2080,7 +2154,7 @@
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000271"/>
         <owl:disjointWith rdf:resource="https://endlessforms.info/gdo/GDO_0000003"/>
         <obo:IAO_0000115>A graphic quality such that the graphic consists of graphical marks positioned using a two-dimensional (planar) coordinate system.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">2D quality of graphic</rdfs:label>
+        <rdfs:label xml:lang="en">2D graphic</rdfs:label>
     </owl:Class>
     
 
@@ -2090,7 +2164,7 @@
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000003">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000271"/>
         <obo:IAO_0000115>A graphic quality such that the graphic consists of graphical marks positioned using a three-dimensional (volumetric) coordinate system but projected onto a two-dimensional plane for display.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">3D quality of graphic</rdfs:label>
+        <rdfs:label xml:lang="en">3D graphic</rdfs:label>
     </owl:Class>
     
 
@@ -2101,7 +2175,7 @@
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000271"/>
         <owl:disjointWith rdf:resource="https://endlessforms.info/gdo/GDO_0000005"/>
         <obo:IAO_0000115>A graphic quality such that the graphical marks are designed as raised surfaces to be perceived using touch.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">tactile quality of graphic</rdfs:label>
+        <rdfs:label xml:lang="en">tactile graphic</rdfs:label>
     </owl:Class>
     
 
@@ -2111,7 +2185,7 @@
     <owl:Class rdf:about="https://endlessforms.info/gdo/GDO_0000005">
         <rdfs:subClassOf rdf:resource="https://endlessforms.info/gdo/GDO_0000271"/>
         <obo:IAO_0000115>A graphic quality such that the graphical marks are designed as differences in color or luminosity to be perceived using sight.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">visual quality of graphic</rdfs:label>
+        <rdfs:label xml:lang="en">visual graphic</rdfs:label>
     </owl:Class>
     
 
@@ -3329,7 +3403,7 @@ https://archive.org/details/theoryofpuredesi00rossuoft/page/134</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="https://endlessforms.info/gdo/GDO_0000032"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A graphic for which the information content is primarily about the form (shape) and/or visual appearance of one or more referents and for which the spatial properties of the spatial composition to correspond in some way to spatial properties of the referent.</obo:IAO_0000115>
+        <obo:IAO_0000115>A graphic for which the information content is primarily about the form (shape) and/or visual appearance of one or more referents and for which the spatial properties of the spatial composition correspond in some way to spatial properties of the referent.</obo:IAO_0000115>
         <obo:IAO_0000118>pictorial illustration</obo:IAO_0000118>
         <rdfs:comment>Examples include the information content of a drawing of a fish, an architectural plan for a house, a map of a state showing locations of hospitals.</rdfs:comment>
         <rdfs:label xml:lang="en">pictorial graphic</rdfs:label>
